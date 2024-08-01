@@ -123,6 +123,8 @@ class Config:
             self.rho_chem = float(tokens[1])  
         elif tokens[0] == 'CHEM_PHASE' :
             self.phase_chem = tokens[1]
+        elif tokens[0] == 'CHEM_VAPOUR_PRESSURE' :
+            self.vp_pressure = float(tokens[1])
             
         ### vehicle specific parameters
         elif tokens[0] == 'INFINITE_VH' : # 
@@ -140,7 +142,11 @@ class Config:
         elif tokens[0] == 'EVAP_SOLUTE_VH' :
             self.k_evap_solute_vehicle = float(tokens[1])
         elif tokens[0] == 'SOLUBILITY_VH' :
-            self.solubility_vehicle = float(tokens[1])          
+            self.solubility_vehicle = float(tokens[1])  
+        elif tokens[0] == 'SOLVENT_NAME' :
+            self.vp_pressure = tokens[1]
+        elif tokens[0] == 'SOLVENT_VAPOUR_PRESSURE' :
+            self.vp_pressure = float(tokens[1])
         
         ### Inital conditions
         elif tokens[0] == 'INIT_CONC_VH' : # vehicle

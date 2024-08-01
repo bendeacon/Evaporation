@@ -417,7 +417,7 @@ class StraCorn(comp.Comp):
             else: 
                 D = 3 * 1E-13
                 
-               
+        #print("Klipid",Kw,"Dlipid",D)     
         return (Kw, D)        
         
         
@@ -440,7 +440,7 @@ class StraCorn(comp.Comp):
                 raise ValueError('Invalid self.Kw_paras.cc.option')
             K_kw = rou_keratin / rou_water * a * (chem.K_ow**b)
             
-        Kw = (1-phi_b) * K_kw + theta_b            
+        Kw = (1-phi_b) * K_kw + theta_b
 
             
         # Diffusion
@@ -468,7 +468,7 @@ class StraCorn(comp.Comp):
             
             D = np.exp( -alpha*(S**lambdaa) ) / ( 1 + r_s_inA/np.sqrt(k) + r_s_inA*r_s_inA/3/k )
             D *= Dw
-                
+        #print("Kcorn",Kw,"Dcorn",D)         
                
         return (Kw, D)
 
@@ -497,7 +497,7 @@ class StraCorn(comp.Comp):
         
         if name == 'LP':            
             Kw, D = self.compParDiff_lp(chem)   
-            print(Kw, D)             
+            #print(Kw, D)             
         elif name == 'CC' : # corneocyte
             Kw, D = self.compParDiff_cc(chem, Dw, r_f, phi_b, theta_b)
             

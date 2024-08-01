@@ -63,7 +63,7 @@ class ViaEpd(comp.Comp):
         elif self.D > 0:
             D = self.D
         #print('self.D = ', self.D)  
-        #print(Kw, D)
+        print("Kepi",Kw,"Depi", D)
         return (Kw, D)
 
     def compODEdydt(self, t, y, args=None):
